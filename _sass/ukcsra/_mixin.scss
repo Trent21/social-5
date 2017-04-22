@@ -1,0 +1,16 @@
+@mixin text-outline($text-color, $text-stroke-color, $text-fill-color, $text-background, $text-stroke-thickness) {
+	color: $text-color;
+	background: $text-background;
+
+	text-stroke: $text-stroke-thickness $text-stroke-color;
+	text-fill-color: $text-fill-color;
+
+	-webkit-text-stroke: $text-stroke-thickness $text-stroke-color;
+	-webkit-text-fill-color: $text-fill-color;
+}
+
+@mixin box-shadow ($horiztonal, $vertical, $blur, $spread, $color) {
+	-webkit-box-shadow: $horiztonal $vertical $blur $spread $color;
+	-moz-box-shadow: $horiztonal $vertical $blur $spread $color;
+	box-shadow: $horiztonal $vertical $blur $spread $color;
+}

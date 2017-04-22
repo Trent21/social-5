@@ -1,0 +1,29 @@
+@include media-breakpoint-only(xs) {
+
+	div#page-title > h1 { font-size: $font-size-h1 * 1.25; }
+
+}
+
+@include media-breakpoint-only(sm) {
+
+	div#page-title > h1 { font-size: $font-size-h1 * 1.5; }
+
+}
+
+@include media-breakpoint-only(md) {
+
+	div#page-title > h1 { font-size: $font-size-h1 * 1.5; }
+
+}
+
+@include media-breakpoint-only(lg) {
+
+	div#page-title > h1 { font-size: $font-size-h1 * 2; }
+
+}
+
+@include media-breakpoint-only(xl) {
+
+	div#page-title > h1 { font-size: $font-size-h1 * 2.5; }
+
+}

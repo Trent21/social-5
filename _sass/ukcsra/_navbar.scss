@@ -1,0 +1,123 @@
+nav.ukcsra {
+
+	img.logo {
+		position: absolute;
+		display: block;
+		float: left;
+		top: 3rem; // was bottom: 15%;
+		left: 3vw;
+
+		height: 3rem;
+
+		z-index: 100000 !important;
+	}
+
+	@include media-breakpoint-down(xs) {
+		img.logo {
+			top: 1rem; // was bottom: 15%;
+		}
+	}
+
+}
+
+nav.back {
+
+	z-index: 1000000;
+	position: absolute;
+
+	margin: 0 0 2rem 0;
+
+	a {
+		margin: 1rem;
+
+		position: relative;
+		display: block;
+
+		height: 2rem;
+		width: auto;
+
+		line-height: 2rem;
+		font-size: 2rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		text-decoration: none;
+
+		@include text-outline($body-inverse-color, $body-inverse-color, transparent, transparent, 2px);
+
+		&:hover, &:focus {
+			text-decoration: none !important;
+			@include text-outline($body-inverse-color, $body-inverse-color, $body-inverse-color, transparent, 0px);
+		}
+
+		&:before {
+			width: 2rem;
+			height: 2rem;
+
+			position: relative; // was position: absolute;
+			display: block;
+			float: left;
+
+			font-size: 2rem;
+			line-height: 2rem;
+
+			z-index: 10000 !important;
+			content: "← ";
+		}
+
+	}
+	
+	@supports (-ms-ime-align:auto) {
+		a {
+			-webkit-text-stroke: none;
+			-webkit-text-fill-color: rgba(255,255,255,0.5);
+		}
+	}
+
+}
+
+nav.scroll {
+
+	a {
+
+		text-decoration: none;
+
+		@include text-outline($body-inverse-color, $body-inverse-color, transparent, transparent, 2px);
+
+		&:hover, &:focus {
+			text-decoration: none !important;
+			@include text-outline($body-inverse-color, $body-inverse-color, $body-inverse-color, transparent, 0px);
+		}
+
+		&.arrow-down:before {
+
+			margin: 1rem;
+
+			position: absolute;
+			display: block;
+
+			text-transform: uppercase;
+			text-decoration: none;
+
+			top: 80vh; // was bottom: 15%;
+			left: 50%;
+			margin-left: -1.2rem;
+
+			height: 3rem;
+			width: 3rem;
+			font-size: 3rem;
+			font-weight: 600;
+			line-height: 3rem;
+
+			content: "↓";
+			z-index: 100000 !important;
+		}
+	}
+	
+	@supports (-ms-ime-align:auto) {
+		a {
+			-webkit-text-stroke: none;
+			-webkit-text-fill-color: rgba(255,255,255,0.5);
+		}
+	}
+
+}
