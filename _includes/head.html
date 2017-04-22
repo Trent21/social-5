@@ -11,10 +11,9 @@
 
 	<!-- Place this data between the <head> tags of your website -->
 	<title>
-	    {% if page.title %}{{ page.title }} &middot; {{ site.title }}
-	    {% else %}{{ site.title }}{% endif %}
+	    {{ site.title }}
 	</title>
-	<meta name="application-name" content="{% if page.title %}{{ page.title }} &middot; {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+	<meta name="application-name" content="{{ site.title }}">
 	<meta name="description" content="{{ site.description }}" />
 
 	<!-- Schema.org markup for Google+ -->
@@ -25,14 +24,14 @@
 	<!-- Twitter Card data -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@{{ site.twitter-username }}">
-	<meta name="twitter:title" content="{% if page.layout != 'home' %}{{ page.title }} • {% endif %}{{ site.title }}">
+	<meta name="twitter:title" content="{{ site.title }}">
 	<meta name="twitter:description" content="{{ site.description }}">
 	<meta name="twitter:creator" content="@{{ site.twitter-username }}">
 	<meta name="twitter:image:src" content="{{ '/social-media.png' | prepend: site.image-path | prepend: site.asset-path | prepend: site.baseurl | prepend: site.url }}">
 
 	<!-- Open Graph data -->
 	<meta property="fb:app_id" content="{{ site.facebook-id }}" />
-	<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+	<meta property="og:title" content="{{ site.title }}" />
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}"  />
 	<meta property="og:image" content="{{ '/social-media.png' | prepend: site.image-path | prepend: site.asset-path | prepend: site.baseurl | prepend: site.url }}" />
@@ -46,7 +45,7 @@
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="{{ site.twitter-username }}">
 	<meta name="twitter:creator" content="{{ site.twitter-username }}">
-	<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+	<meta name="twitter:title" content="{{ site.title }}">
 	<meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.description | strip_html }}{% endif %}">
 	<meta name="twitter:image" content="{% if page.image %}{{ page.image | prepend: site.image-path | prepend: site.asset-path | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.logo | prepend: site.image-path | prepend: site.asset-path | prepend: site.baseurl | prepend: site.url }}{% endif %}">
 
