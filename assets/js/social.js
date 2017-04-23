@@ -1,6 +1,10 @@
-function updateImages() {
+$(document).ready(function(){
 
-	showPreviews();
+	updateImages();
+
+});
+
+function updateImages() {
 
 	var bgGradient1 = document.getElementById('formGradient1').value;
 	var bgGradient2 = document.getElementById('formGradient2').value;
@@ -17,10 +21,6 @@ function updateImages() {
 	var textFill4 = document.getElementById('formFillCheck4').checked;
 	var textFill5 = document.getElementById('formFillCheck5').checked;
 
-	var facebookBaseline = 315;
-	var twitterBaseline = 256;
-	var instagramBaseline = 540;
-
 	var facebookWidth = 1200;
 	var facebookHeight = 630;
 	var facebookLineHeight = 100;
@@ -32,6 +32,10 @@ function updateImages() {
 	var instagramWidth = 1080;
 	var instagramHeight = instagramWidth;
 	var instagramLineHeight = 120;
+
+	var facebookBaseline = (facebookHeight * 0.5);
+	var twitterBaseline = (twitterHeight * 0.5);
+	var instagramBaseline = (instagramHeight * 0.5);
 
 	var img = document.getElementById("csra-logo");
 
@@ -47,17 +51,17 @@ function updateImages() {
 	context.scale(2,2);
 
 	// Create gradient
-	var grd = context.createLinearGradient(0,0,1200,630);
+	var grd = context.createLinearGradient(0, 0, facebookWidth, facebookHeight);
 	grd.addColorStop(0, bgGradient1);
 	grd.addColorStop(1, bgGradient2);
 
 	// Fill with gradient
 	context.fillStyle = grd;
-	context.fillRect(0,0,1200,630);
+	context.fillRect(0, 0, facebookWidth, facebookHeight);
 
 	// Add text
 	context.textBaseline = "middle";
-	context.font = "bold 100px 'Avenir Next'";
+	context.font = "bold " +facebookLineHeight+ "px 'Avenir Next'";
 	context.strokeStyle = "#ffffff";
 	context.lineWidth   = 3;
 	context.fillStyle = "#ffffff"
@@ -164,7 +168,7 @@ function updateImages() {
 
 	}
 
-	context.drawImage(img, (facebookWidth - 100) , (facebookHeight - 60), 80, 40);
+	context.drawImage(img, (facebookWidth - 100) , (facebookHeight - 60), 70, 35);
 
 
 	// save canvas image as data url (png format by default)
@@ -184,17 +188,17 @@ function updateImages() {
 	context.scale(2,2);
 
 	// Create gradient
-	var grd = context.createLinearGradient(0,0,1024,512);
+	var grd = context.createLinearGradient(0, 0, twitterWidth, twitterHeight);
 	grd.addColorStop(0, bgGradient1);
 	grd.addColorStop(1, bgGradient2);
 
 	// Fill with gradient
 	context.fillStyle = grd;
-	context.fillRect(0,0,1024,512);
+	context.fillRect(0, 0, twitterWidth, twitterHeight);
 
 	// Add text
 	context.textBaseline = "middle";
-	context.font = "bold 85px 'Avenir Next'";
+	context.font = "bold " +twitterLineHeight+ "px 'Avenir Next'";
 	context.strokeStyle = "#ffffff";
 	context.lineWidth   = 3;
 	context.fillStyle = "#ffffff"
@@ -302,7 +306,7 @@ function updateImages() {
 	}
 
 
-	context.drawImage(img, (twitterWidth - 100) , (twitterHeight - 60), 80, 40);
+	context.drawImage(img, (twitterWidth - 100) , (twitterHeight - 60), 70, 35);
 
 	// save canvas image as data url (png format by default)
 	var dataURL = canvas.toDataURL();
@@ -327,11 +331,11 @@ function updateImages() {
 
 	// Fill with gradient
 	context.fillStyle = grd;
-	context.fillRect(0,0,1080,1080);
+	context.fillRect(0, 0, instagramWidth, instagramHeight);
 
 	// Add text
 	context.textBaseline = "middle";
-	context.font = "bold 125px 'Avenir Next'";
+	context.font = "bold " +instagramLineHeight+ "px 'Avenir Next'";
 	context.strokeStyle = "#ffffff";
 	context.lineWidth   = 3;
 	context.fillStyle = "#ffffff"
@@ -438,7 +442,7 @@ function updateImages() {
 
 	}
 
-	context.drawImage(img, (instagramWidth - 100) , (instagramHeight - 60), 80, 40);
+	context.drawImage(img, (instagramWidth - 100) , (instagramHeight - 60), 70, 35);
 
 	// save canvas image as data url (png format by default)
 	var dataURL = canvas.toDataURL();
@@ -446,22 +450,6 @@ function updateImages() {
 	// set canvasImg image src to dataURL
 	// so it can be saved as an image
 	document.getElementById('instagram-output').src = dataURL;
-
-}
-
-function showPreviews() {
-
-	if( document.getElementById('placeholder').style.display != "none" )
-   {
-      document.getElementById('placeholder').style.display = "none";
-      document.getElementById('facebook-preview').style.display = "inherit";
-      document.getElementById('twitter-preview').style.display = "inherit";
-      document.getElementById('instagram-preview').style.display = "inherit";
-   }
-   else
-   {
-
-   }
 
 }
 

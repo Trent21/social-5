@@ -18,7 +18,7 @@ layout: default
 
 		<div class="row">
 
-			<div class="col-xs-12 col-sm-4">
+			<div class="col-xs-12 col-lg-4">
 
 				<div class="card">
 					<div class="card-block">
@@ -30,7 +30,7 @@ layout: default
 
 			</div>
 
-			<div class="col-xs-12 col-sm-8">
+			<div class="col-xs-12 col-lg-8">
 
 				<div class="card">
 					<div class="card-block">
@@ -88,12 +88,12 @@ layout: default
 
 									<label class="sr-only" for="formText1">Text line 1</label>
 									<div class="col-9">
-									<input type="text" class="form-control" id="formText1" placeholder="Enter text to display" oninput="showLines();">
+									<input type="text" class="form-control" id="formText1" placeholder="Enter text to display" oninput="updateImages();">
 									</div>
 
 									<div class="form-check col-sm-3 text-center">
 										<label class="custom-control custom-checkbox">
-										  <input id="formFillCheck1" type="checkbox" class="custom-control-input" >
+										  <input id="formFillCheck1" type="checkbox" class="custom-control-input" onclick="updateImages();" >
 										  <span class="custom-control-indicator"></span>
 										  <span class="custom-control-description sr-only">Text fill?</span>
 										</label>
@@ -105,12 +105,12 @@ layout: default
 
 									<label class="sr-only" for="formText2">Text line 2</label>
 									<div class="col-9">
-									<input type="text" class="form-control" id="formText2" placeholder="Enter text to display" oninput="showLines();">
+									<input type="text" class="form-control" id="formText2" placeholder="Enter text to display" oninput="updateImages();">
 									</div>
 
 									<div class="form-check col-sm-3 text-center">
 										<label class="custom-control custom-checkbox">
-										  <input id="formFillCheck2" type="checkbox" class="custom-control-input" >
+										  <input id="formFillCheck2" type="checkbox" class="custom-control-input" onclick="updateImages();">
 										  <span class="custom-control-indicator"></span>
 										  <span class="custom-control-description sr-only">Text fill?</span>
 										</label>
@@ -122,12 +122,12 @@ layout: default
 
 									<label class="sr-only" for="formText3">Text line 3</label>
 									<div class="col-9">
-									<input type="text" class="form-control" id="formText3" placeholder="Enter text to display" oninput="showLines();">
+									<input type="text" class="form-control" id="formText3" placeholder="Enter text to display" oninput="updateImages();">
 									</div>
 
 									<div class="form-check col-sm-3 text-center">
 										<label class="custom-control custom-checkbox">
-										  <input id="formFillCheck3" type="checkbox" class="custom-control-input" >
+										  <input id="formFillCheck3" type="checkbox" class="custom-control-input" onclick="updateImages();" >
 										  <span class="custom-control-indicator"></span>
 										  <span class="custom-control-description sr-only">Text fill?</span>
 										</label>
@@ -139,12 +139,12 @@ layout: default
 
 									<label class="sr-only" for="formText4">Text line 4</label>
 									<div class="col-9">
-									<input type="text" class="form-control" id="formText4" placeholder="Enter text to display" oninput="showLines();">
+									<input type="text" class="form-control" id="formText4" placeholder="Enter text to display" oninput="updateImages();">
 									</div>
 
 									<div class="form-check col-sm-3 text-center">
 										<label class="custom-control custom-checkbox">
-										  <input id="formFillCheck4" type="checkbox" class="custom-control-input" >
+										  <input id="formFillCheck4" type="checkbox" class="custom-control-input" onclick="updateImages();" >
 										  <span class="custom-control-indicator"></span>
 										  <span class="custom-control-description sr-only">Text fill?</span>
 										</label>
@@ -156,12 +156,12 @@ layout: default
 
 									<label class="sr-only" for="formText5">Text line 5</label>
 									<div class="col-9">
-									<input type="text" class="form-control" id="formText5" placeholder="Enter text to display" oninput="showLines();">
+									<input type="text" class="form-control" id="formText5" placeholder="Enter text to display" oninput="updateImages();">
 									</div>
 
 									<div class="form-check col-sm-3 text-center">
 										<label class="custom-control custom-checkbox">
-										  <input id="formFillCheck5" type="checkbox" class="custom-control-input" >
+										  <input id="formFillCheck5" type="checkbox" class="custom-control-input" onclick="updateImages();" >
 										  <span class="custom-control-indicator"></span>
 										  <span class="custom-control-description sr-only">Text fill?</span>
 										</label>
@@ -169,7 +169,7 @@ layout: default
 
 								</div>
 
-								<button class="btn btn-primary" onclick="updateImages();">Generate images</button>
+								<!--button class="btn btn-primary btn-block" onclick="updateImages();">Update images</button -->
 
 							</div>
 
@@ -190,17 +190,9 @@ layout: default
 
 <div id="imageOutputs" class="row">
 
-	<div id="placeholder" class="col-12">
+	<div class="col-xs-12 col-sm-6 col-lg-4">
 
-			<p class="h2">Previews appear here</h1>
-
-			<p class="lead">Start adjusting settings, and images will be previewed here.</p>
-
-	</div>
-
-	<div class="col">
-
-		<div id="facebook-preview" class="card" style="display: none;">
+		<div id="facebook-preview" class="card">
 			<div class="card-block">
 
 			    <h2>Facebook</h2>
@@ -214,25 +206,25 @@ layout: default
 
 	</div>
 
-	<div class="col">
+	<div class="col-xs-12 col-sm-6 col-lg-4">
 
-		<div id="twitter-preview" class="card" style="display: none;">
+		<div id="twitter-preview" class="card">
 			<div class="card-block">
 
 			    <h2>Twitter</h2>
 
 				<canvas id="twitter" style="display:none;"></canvas>
 
-			    <img id="twitter-output" class="img-fluid" alt="Right click to save me!">
+			    <p><img id="twitter-output" class="img-fluid" alt="Right click to save me!"></p>
 
 			</div>
 		</div>
 
 	</div>
 
-	<div class="col">
+	<div class="col-xs-12 col-sm-6 col-lg-4">
 
-		<div id="instagram-preview" class="card" style="display: none;">
+		<div id="instagram-preview" class="card">
 			<div class="card-block">
 
 			    <h2>Instagram</h2>
