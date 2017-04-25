@@ -61,7 +61,7 @@ function updateImages() {
 
 	// Add text
 	context.textBaseline = "middle";
-	context.font = "bold " +facebookLineHeight+ "px 'Avenir Next'";
+	context.font = "bold " +facebookLineHeight+ "px 'Avenir Next', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
 	context.strokeStyle = "#ffffff";
 	context.lineWidth   = 3;
 	context.fillStyle = "#ffffff"
@@ -198,7 +198,7 @@ function updateImages() {
 
 	// Add text
 	context.textBaseline = "middle";
-	context.font = "bold " +twitterLineHeight+ "px 'Avenir Next'";
+	context.font = "bold " +twitterLineHeight+  "px 'Avenir Next', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
 	context.strokeStyle = "#ffffff";
 	context.lineWidth   = 3;
 	context.fillStyle = "#ffffff"
@@ -335,7 +335,7 @@ function updateImages() {
 
 	// Add text
 	context.textBaseline = "middle";
-	context.font = "bold " +instagramLineHeight+ "px 'Avenir Next'";
+	context.font = "bold " +instagramLineHeight+  "px 'Avenir Next', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
 	context.strokeStyle = "#ffffff";
 	context.lineWidth   = 3;
 	context.fillStyle = "#ffffff"
