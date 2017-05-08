@@ -1,13 +1,13 @@
 html {
-
+	background: #000;
 }
 
 body {
 
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 
-	background: darken($brand-blue, 20%);
+	@include background-gradient($brand-blue, $brand-purple, $brand-pink);
 
 	main {
 
